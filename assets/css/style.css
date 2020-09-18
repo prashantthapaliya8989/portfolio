@@ -209,9 +209,8 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  margin: 0px 135px;
-  padding: 20px 0px;
-  width: 90%;
+
+  width: 100%;
   height: 100vh;
   background: url("../img/hero-bg1.jpg")  center;
   background-size: 1500px 800px;
@@ -597,13 +596,13 @@ section {
 
 .services .icon {
   float: left;
-  display: flex;
+  
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 200px;
+  height: 180px;
   background: #149ddd;
-  border-radius: 50%;
+  border-radius: 0%;
   transition: 0.5s;
   border: 1px solid #149ddd;
 }
@@ -622,7 +621,7 @@ section {
 }
 
 .services .title {
-  margin-left: 80px;
+  margin-left: 220px;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
