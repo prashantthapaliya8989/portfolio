@@ -209,10 +209,12 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
+  margin: 0px 135px;
+  padding: 20px 0px;
+  width: 90%;
   height: 100vh;
   background: url("../img/hero-bg1.jpg")  center;
-  background-size: cover;
+  background-size: 1500px 800px;
 }
 
 #hero:before {
