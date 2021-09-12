@@ -208,15 +208,23 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+/* #hero {
+  position: absolute;
 
-  width: 100%;
+   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg1.jpg")  center;
-  background-size: 1500px 800px;
-}
+  background: rgba(5, 13, 24, 0.3);
+  /*background: url("../img/FINAL_MAP.jpg")  left;
+  background-size: 1500px 800px; 
+}*/
+/* @media (min-width: 1200px) {
+  .hero-container {
+    margin-left: -300px;
+    margin-top: 170px;
+    
+} */
 
-#hero:before {
+/* #hero:before {
   content: "";
   background: rgba(5, 13, 24, 0.3);
   position: absolute;
@@ -225,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   z-index: 1;
-}
+} */
 
 #hero .hero-container {
   position: relative;
