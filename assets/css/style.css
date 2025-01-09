@@ -1089,3 +1089,68 @@ section {
     padding-right: 20px 15px;
   }
 }
+
+/* Import Open Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Overall styling for the row containing all the portraits */
+/* .skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+} */
+
+/* Styling for each portrait block */
+.portrait {
+  text-align: center;
+  width: 150px; /* Adjust this width as needed */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.portrait img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional rounded corners for the images */
+}
+
+.portrait p {
+  font-size: 14px; /* Font size changed to 14px */
+  font-weight: 400; /* Regular weight */
+  color: #333; /* Dark grey text color */
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: 'Open Sans', sans-serif; /* Set font to Open Sans */
+}
+
+/* Hover effect for images */
+.portrait:hover {
+  transform: scale(1.1); /* Zoom in the image slightly */
+  cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .portrait {
+    width: 120px;
+  }
+
+  .skills-content {
+    gap: 10px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait {
+    width: 100px;
+  }
+
+  .skills-content {
+    gap: 5px;
+    justify-content: center;
+  }
+}
