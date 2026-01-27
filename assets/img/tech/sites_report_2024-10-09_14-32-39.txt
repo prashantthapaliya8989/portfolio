@@ -1,0 +1,136 @@
+SITES - QA SUMMARY
+===================
+
+Start Date: 2024/06/01 
+End Date: 2024/10/08 
+
+Number of selected features based on date range: 26
+
+===================
+Duplicates
+
+20 Number of unique values
+6 Number of duplicates
+
+Address: [OBJECTID]
+1004 DEBORAH DR LOVELAND: [10404, 10405]
+2101 S GARFIELD AVE LOVELAND: [10406, 10407, 10409, 10410]
+===================
+GLOBAL_UID
+
+26 Number of valid attribute 
+0 Number of GLOBAL_UID calculated 
+0 Number of GLOBAL_UID are blanked 
+
+===================
+DATE_EFFECTIVE
+
+26 Number of valid attribute 
+0 Number of DATE_EFFECTIVE calculated 
+0 Number of DATE_EFFECTIVE are blanked 
+
+===================
+EXPIRE
+
+26 Number of valid attribute 
+0 Number of EXPIRE calculated 
+0 Number of EXPIRE are blanked 
+
+===================
+ADDRESS
+
+26 Number of valid attribute 
+0 Number of ADDRESS calculated 
+0 Number of ADDRESS are blanked 
+
+===================
+FULL_ADDR
+
+26 Number of valid attribute 
+0 Number of FULL_ADDR calculated 
+0 Number of FULL_ADDR are blanked 
+
+===================
+REL_ST_FLNAME
+
+26 Number of valid attribute 
+0 Number of REL_ST_FLNAME calculated 
+0 Number of REL_ST_FLNAME are blanked 
+
+===================
+RANK
+
+26 Number of valid attribute 
+0 Number of RANK calculated 
+0 Number of RANK are blanked 
+
+===================
+LONGITUDE
+
+26 Number of valid attribute 
+0 Number of LONGITUDE calculated 
+0 Number of LONGITUDE are blanked 
+
+===================
+LATITUDE
+
+26 Number of valid attribute 
+0 Number of LATITUDE calculated 
+0 Number of LATITUDE are blanked 
+
+===================
+COUNTRY
+
+26 Number of valid attribute 
+0 Number of COUNTRY calculated 
+0 Number of COUNTRY are blanked 
+
+===================
+STATE
+
+26 Number of valid attribute 
+0 Number of STATE calculated 
+0 Number of STATE are blanked 
+
+===================
+COUNTY
+
+26 Number of valid attribute 
+0 Number of COUNTY calculated 
+0 Number of COUNTY are blanked 
+
+===================
+MUNICIPAL
+
+26 Number of valid attribute 
+0 Number of MUNICIPAL calculated 
+0 Number of MUNICIPAL are blanked 
+
+===================
+DISCRPAGID
+
+26 Number of valid attribute 
+0 Number of DISCRPAGID calculated 
+0 Number of DISCRPAGID are blanked 
+
+===================
+ZIP
+
+26 Number of valid attribute 
+0 Number of ZIP calculated 
+0 Number of ZIP are blanked 
+
+===================
+POSTAL_COMM
+
+26 Number of valid attribute 
+0 Number of POSTAL_COMM calculated 
+0 Number of POSTAL_COMM are blanked 
+
+===================
+ESN
+
+26 Number of valid attribute 
+0 Number of ESN calculated 
+0 Number of ESN are blanked 
+

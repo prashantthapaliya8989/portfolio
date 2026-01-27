@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Prashant Thapaliya</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../../assets/img/avatar.png" rel="icon" />
+    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+      href="../../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="../../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: iPortfolio - v1.4.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+  <style>
+    .portrait {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <body>
+    <div id="header-container"></div>
+
+    <main id="main">
+      <!-- ======= Title ======= -->
+      <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h1>
+              QA Automation Tool for Record Validation
+            </h1>
+          </div>
+          <h2> Arcpy, Timedelta, Relativedelta, Dictionary </h2>
+
+        </div>
+      </section>
+      <!-- End Title -->
+
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+          <div class="portfolio-description">
+            <h2 style="color: rgb(0, 0, 0)"><strong><u>Problem</u></strong></h2>
+            <p>
+              In GIS data pipeline, managing the quality and completeness of address data is 
+              time-consuming, inconsistent, and prone to human error. Frequent issues included:
+              <ui>
+                <li>Missing or malformed addresses</li>
+                <li>Duplicate records</li>
+                <li>Incomplete or incorrect spatial attribution (e.g., ZIP codes, municipal boundaries)</li>
+                <li>Manual QA reports that lacked standardization</li>
+              </ui>
+              These inconsistencies not only caused downstream validation failures but also posed potential 
+              risks in systems relying on accurate location data, such as emergency dispatch and infrastructure planning.
+            </p>
+            <br><h2 style="color: rgb(0, 0, 0)"><strong><u>Solution</u></strong></h2>
+            <p>
+              Developed a <b>custom ArcPy-based QA Toolbox Tool</b> in ArcGIS Pro to automate the entire quality assurance 
+              process for address data. The tool streamlines spatial and attribute validation, performs duplicate checks, 
+              auto-fills critical fields, and generates standardized reports.
+            </p>
+            <br><h2 style="color: rgb(0, 0, 0)"><strong>&lt;/&gt; <u>Snippet</u></strong></h2>
+            <pre><code class="language-python">
+              def count_items_in_dict(d):
+                all_dup = {}
+                single_item_count = 0
+                multiple_items_count = 0
+
+                for key, value in d.items():
+                    if len(value) == 1:
+                        single_item_count += 1
+                    elif len(value) > 1:
+                        all_dup[key] = value
+                        multiple_items_count += len(value)
+
+                return single_item_count, multiple_items_count, all_dup
+
+              single_count, multiple_count, dup_dict = count_items_in_dict(address_to_objectids)
+
+              report_file.write("===================\n")
+              report_file.write("Duplicates\n\n")
+              report_file.write(f"{single_count} Number of unique values\n")
+              report_file.write(f"{multiple_count} Number of duplicates\n\n")
+              if dup_dict.items():
+                  report_file.write("Address: [OBJECTID]\n")
+                  for key, value in dup_dict.items():
+                      report_file.write(f"{key}: {value}\n")
+
+            </code></pre>
+
+            <div class="text-center">
+              <img src="../../assets/img/tech/qa_report.png" class="img-fluid"/>
+              <p style="font-size: 15px"> <i>Output sample</i></p> <br>
+
+            </div>
+
+
+            <br><h2 style="color: rgb(0, 0, 0)"><strong><u>Features</u></strong></h2>
+            <ul>
+              <li><strong>Date-based Filtering:</strong> Filters site records modified within a user-defined or default 
+                (15-day) date range.</li>
+              <li><strong>Duplicate Detection:</strong> Automatically detects duplicate addresses using normalized address 
+                strings and flags them in the report.</li>
+              <li><strong>Smart Address Normalization:</strong> Standardizes address strings by stripping extra spaces and 
+                combining fragmented components.</li>
+              <li><strong>Automated Attribute Completion:</strong>
+                <ul>
+                  <li>GLOBAL_UID</li>
+                  <li>DATE_EFFECTIVE</li>
+                  <li>EXPIRE</li>
+                  <li>ADDRESS, FULL_ADDR, and REL_ST_FLNAME</li>
+                  <li>LATITUDE, LONGITUDE (from geometry)</li>
+                  <li>RANK</li>
+                </ul>
+              </li>
+              <li><strong>Spatial Validation via Polygon Layers:</strong> Cross-checks site points with Municipal, ESZ, and ZIP code boundaries to populate missing geographic data like:
+                <ul>
+                  <li>COUNTRY, STATE, COUNTY, MUNICIPALITY, ZIP, ESN</li>
+                  <li>Flags records outside or touching boundaries</li>
+                </ul>
+              </li>
+              <li><strong>Dynamic Report Generation:</strong>
+                <ul>
+                  <li>Record counts (updated, valid, blank)</li>
+                  <li>Lists of duplicates and nulls grouped by street name</li>
+                  <li>Boundary exceptions (e.g., point outside polygon)</li>
+                </ul>
+              </li>
+              </ul>
+
+            <br><h2 style="color: rgb(0, 0, 0)"><strong><u>Impact</u></strong></h2>
+            <ul>
+              <li><b>70% reduction in manual QA time</b> for site records</li>
+              <li><b>Consistent, auditable reports</b> that support regulatory and operational reviews</li>
+              <li><b>Improved data integrity</b>, reducing issues in dispatch and utility mapping</li>
+              <li>Enabled <b>scalability</b>—can be re-run weekly or monthly without developer involvement</li>
+              <li>Enhanced <b>collaboration across teams</b> by offering clear, repeatable QA logic and outputs</li>
+            </ul>
+
+
+          </div>
+        </div>
+      </section>
+      <!-- End Portfolio Details Section -->
+    </main>
+    <!-- End #main -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="../../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../../assets/vendor/counterup/counterup.min.js"></script>
+    <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../../assets/vendor/venobox/venobox.min.js"></script>
+    <script src="../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="../../assets/vendor/typed.js/typed.min.js"></script>
+    <script src="../../assets/vendor/aos/aos.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/header.js"></script>
+    <script>   
+      // Load header and portfolio when page is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        // Load header first, then portfolio
+        loadHeaderSection().then(() => {
+          loadPortfolioSection();
+        });
+      });
+    </script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  </body>
+</html>

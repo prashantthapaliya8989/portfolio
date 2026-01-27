@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Prashant Thapaliya</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../../assets/img/avatar.png" rel="icon" />
+    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+      href="../../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="../../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: iPortfolio - v1.4.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+  <style>
+    .portrait {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <body>
+    <div id="header-container"></div>
+
+    <main id="main">
+      <!-- ======= Title ======= -->
+      <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h1>
+              3D Web App Development using Mapbox
+            </h1>
+          </div>
+          <h2>3D GIS Web Viewer | JavaScript, Mapbox GL JS, GeoJSON, ArcGIS REST API, HTML/CSS</h2>
+
+        </div>
+      </section>
+      <!-- End Title -->
+
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+          <div class="portfolio-description">
+            <h2 style="color: rgb(0, 0, 0)"><strong><u>Problem</u></strong></h2>
+            <p>
+                Emergency dispatch teams rely heavily on accurate, up-to-date spatial information to make quick and informed decisions.
+                Recent tools are limited to 2D desktop GIS environments, making it difficult to interpret infrastructure like buildings, floors, and service sites.
+              </li>
+              <li><strong>Inaccessible tools:</strong> Non-GIS staff in dispatch centers couldn't easily access or navigate complex GIS software.</li>
+              <li><strong>Lack of 3D building context:</strong> Dispatchers had no visual understanding of building height or floor-specific access points during an emergency.</li>
+              <li><strong>No real-time floor plan or service site visualization:</strong> It was challenging to validate site coverage or locate key infrastructure during urgent situations.</li>
+              <li><strong>Limited situational awareness:</strong> Coordinating across agencies or handling high-stakes incidents was harder without intuitive spatial tools.</li>
+                <br>A browser-based, interactive 3D viewer was needed to bridge the gap between GIS data and real-world emergency response workflows.
+            </ul>
+
+
+            </p>
+            <br><h2 style="color: rgb(0, 0, 0)"><strong><u>Solution</u></strong></h2>
+            <p>
+              Built an interactive <b>3D GIS web application</b> using <b>Mapbox GL JS</b> to visualize site data. The application includes:
+            </p>
+            <ul>
+              <li>Extruded 3D buildings for enhanced spatial context</li>
+              <li>Floor plans loaded dynamically via ArcGIS REST Feature Service queries</li>
+              <li>High-resolution satellite imagery overlays</li>
+              <li>Real-time service site points and road centerline from ArcGIS Feature Services</li>
+            </ul>
+            <p>
+              This solution delivers a <strong>web-based, real-time 3D viewer</strong> that is accessible from any modern browser. It supports layer toggling and intelligent data loading based on the current map zoom level and extent, improving performance and user experience.
+            </p>
+
+            <br>
+            <h2 style="color: rgb(0, 0, 0)"><strong>&lt;/&gt; <u>Snippet</u></strong></h2>
+            <pre><code class="language-python">
+              map.on('click', 'leta-points-layer', function (e) {
+              const coordinates = e.features[0].geometry.coordinates.slice();
+              const props = e.features[0].properties;
+              let info = '';
+              for (const key in props) {
+                info += `<strong>${key}</strong>: ${props[key]}<br>`;
+              }
+              new mapboxgl.Popup()
+                .setLngLat(coordinates)
+                .setHTML(info)
+                .addTo(map);
+            });
+            </code></pre>
+            <div class="text-center">
+              <p style="font-size: 15px"> <i>Popup the attribute of the data</i></p> <br>
+              <img src="../../assets/img/tech/mapbox1.png" class="img-fluid"/>
+              <p style="font-size: 15px"> <i>3D Terrain and Building with Sites Fetched from ArcGIS Rest API</i></p> <br>
+            </div>
+
+
+            <br><h2 style="color: rgb(0, 0, 0)"><strong><u>Features</u></strong></h2>
+            <ul>
+              <li><strong>3D Building Extrusion:</strong> Dynamically extrudes buildings based on real-world height attributes.</li>
+
+              <li><strong>Draped Satellite Imagery:</strong> Overlays Esri World Imagery and terrain to simulate real-world elevation and environment.</li>
+
+              <li><strong>Interactive Floor Plan Integration:</strong>
+                <ul>
+                  <li>Loads GeoJSON from ArcGIS FeatureServer on demand (based on view extent)</li>
+                  <li>Outlines and fills building floors with styled layers</li>
+                </ul>
+              </li>
+
+              <li><strong>Dynamic Site Points:</strong>
+                <ul>
+                  <li>Loads only visible data (based on zoom and bounds)</li>
+                  <li>Shows site attributes on click via popup</li>
+                  <li>Labels address fields at high zoom levels</li>
+                </ul>
+              </li>
+
+              <li><strong>Layer Switcher UI:</strong> Custom HTML controls for toggling visibility of:
+                <ul>
+                  <li>3D Buildings</li>
+                  <li>Floor Plans</li>
+                  <li>Sites and so on</li>
+                </ul>
+              </li>
+            </ul>
+
+            <br><h2 style="color: rgb(0, 0, 0)"><strong><u>Impact</u></strong></h2>
+            <ul>
+              <li><strong>Increased accessibility:</strong> Made advanced spatial analysis available to non-GIS 
+                users via a browser-based viewer.</li>
+              <li><strong>Reduced reliance:</strong> Less need for desktop GIS software for visual validation 
+                of sites and infrastructure.</li>
+              <li><strong>Real-time performance optimization:</strong> Loads only floor plans and service points 
+                within current extent, improving speed and usability.</li>
+              <li><strong>Enhanced spatial storytelling:</strong> 3D visuals and interactivity can improve decision-making.</li>
+            </ul>
+
+
+          </div>
+        </div>
+      </section>
+      <!-- End Portfolio Details Section -->
+    </main>
+    <!-- End #main -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="../../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../../assets/vendor/counterup/counterup.min.js"></script>
+    <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../../assets/vendor/venobox/venobox.min.js"></script>
+    <script src="../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="../../assets/vendor/typed.js/typed.min.js"></script>
+    <script src="../../assets/vendor/aos/aos.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/header.js"></script>
+    <script>   
+      // Load header and portfolio when page is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        // Load header first, then portfolio
+        loadHeaderSection().then(() => {
+          loadPortfolioSection();
+        });
+      });
+    </script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  </body>
+</html>

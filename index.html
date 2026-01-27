@@ -47,175 +47,313 @@
       margin-left: 20px;
       margin-bottom: 20px;
     }
+ 
   </style>
   <body>
-    <!-- ======= Mobile nav toggle button ======= -->
-    <button type="button" class="mobile-nav-toggle d-xl-none">
-      <i class="icofont-navigation-menu"></i>
-    </button>
-
-    <!-- ======= Header ======= -->
-    <header id="header">
-      <div class="d-flex flex-column">
-          <div class="profile"><img src="assets/img/prashantthapaliya-removebg-preview1.png"> 
-          <h1 class="text-light">
-            <a href="index.html">Prashant Thapaliya</a>
-          </h1>
-          <div class="social-links mt-3 text-center">
-            <a href="https://www.facebook.com/prashant8989/" class="facebook"
-              ><i class="bx bxl-facebook"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/prashant_o5_24/"
-              class="instagram"
-              ><i class="bx bxl-instagram"></i
-            ></a>
-            <a
-              href="https://join.skype.com/invite/UpwQO0CEPJca"
-              class="google-plus"
-              ><i class="bx bxl-skype"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/prashantthapaliya8989/"
-              class="linkedin"
-              ><i class="bx bxl-linkedin"></i
-            ></a>
-          </div>
-        </div>
-
-        <nav class="nav-menu">
-          <ul>
-            <li class="active">
-              <a href="#home"><i class="bx bx-home"></i> <span>Home</span></a>
-            </li>
-            <li>
-              <a href="#about"><i class="bx bx-user"></i> <span>About</span></a>
-            </li>
-            <li>
-              <a href="#resume"
-                ><i class="bx bx-file-blank"></i> <span>Resume</span></a
-              >
-            </li>
-            <li>
-              <a href="#skills"
-                ><i class="bx bxs-edit-alt"></i><span>Skills</span></a
-              >
-            </li>
-            <li>
-              <a href="#project"><i class="bx bx-server"></i> Portfolio</a>
-            </li>
-            <li>
-              <a href="#contact"><i class="bx bx-envelope"></i> Contact</a>
-            </li>
-          </ul>
-        </nav>
-        <!-- .nav-menu -->
-        <button type="button" class="mobile-nav-toggle d-xl-none">
-          <i class="icofont-navigation-menu"></i>
-        </button>
-      </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <!-- <section id="hero" class="d-flex flex-column justify-content-left align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Prashant 
-      <br>Thapaliya</h1>
-      <p>I'm <span class="typed" data-typed-items="Geomatics Engineer"></span></p>
+    <!-- Start Header Section -->
+    <div id="header-container">
+      <!-- End Header Section -->
     </div>
-  </section> -->
-    <!-- End Hero -->
 
     <main id="main">
-      <div class="container">
-        <!-- <div class="hero_wrap"> -->
-        <section id="home" style="margin-top: -60px">
-          <img src="assets/img/world_map.png" width="100%" />
-        </section>
-      </div>
-
+      <!-- Hidden anchor for home navigation -->
+      <div id="home" style="height: 10px; margin-top: -60px;"></div>
+      
       <!-- ======= About Section ======= -->
-      <section id="about" class="about">
-        <div class="container">
-          <div class="section-title">
-            <h2>About</h2>
-            <!-- <p> Learn more about me.</p> -->
-          </div>
+      <section id="about" class="about" style="background-image: url('assets/img/world.png'); min-height: 100vh; width: 100%; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; display: flex; align-items: center; padding: 60px 0;">
+        <div class="container" id="about-container" style="background-color: rgba(255, 255, 255, 0.8); padding: 40px; border-radius: 20px; margin: auto; position: relative; transition: all 0.3s ease; max-width: 95%;">
+          <!-- Minimize Button -->
+          <button id="minimize-btn" onclick="toggleMinimize()" style="position: absolute; top: 20px; right: 15px; background: #3498db; border: black; border-radius: 50%; width: 35px; height: 35px; color: white; font-size: 16px; cursor: pointer; z-index: 10; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.2s ease;" onmouseover="this.style.background='#2980b9'" onmouseout="this.style.background='#3498db'">−</button>
+          
+          <div id="about-content" style="transition: all 0.3s ease;">
+            <div class="section-title">
+              <h2>About</h2>
+              <!-- <p> Learn more about me.</p> -->
+            </div>
 
           <div class="row">
-            <div class="col-lg-4" data-aos="fade-right">
-              <img
-                src="assets/img/avatar1.jpg"
-                class="img-fluid"
-                width="80%"
-                alt=""
-              />
-            </div>
-            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-              <h3>Welcome to my portfolio</h3>
-              <p class="font-italic" style="text-align: justify">
-                I am a <b> GIS Analyst </b> at Larimer Emergency Telephone Authority (LETA 911).
-                I apply my skills in geospatial programming, data analysis, and visualization to 
-                support critical emergency response systems. 
-                I completed my MS in <b> Geography </b> with a concentration in <b> Data Analytics </b>
+            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-right">
+              <h3 style="text-align: center; text-shadow: 0 0 10px rgb(59, 98, 228);">👋 Welcome to my portfolio</h3>
+              <p class="font-italic" style="text-align: justify; padding-left: 40px; padding-right: 40px; font-size: 18px;">
+                I'm <b>Prashant Thapaliya</b>, a GIS Analyst at <b>Larimer Emergency Telephone Authority (LETA 911)</b>, where I design 
+                and manage spatial data solutions that support real-time emergency communication systems across northern 
+                Colorado. My work bridges the gap between <b>location intelligence</b> and <b>public safety operations</b>, enabling faster, 
+                smarter, and more coordinated responses during critical incidents. Whether it’s optimizing dispatch maps, 
+                integrating datasets from multiple agencies, or automating spatial workflows with Python, I bring both technical 
+                precision and mission-driven thinking to every project. <br> <br>
+                I hold an MS degree in <b> Geography </b> with a concentration in <b> Data Analytics </b>
                 from the University of North Texas, 
-                and Bachelors in <b> Geomatics
-                Engineering </b>  from Kathmandu University. I am proficient in tools like ArcGIS Pro, 
-                ArcGIS Online, ArcGIS Experience Builder, ArcGIS Survey123, Tableau, and Python. <br /><br />
-                I have working experience at International Center for
-                Integrated Mountain Development (ICIMOD) with proficient group
-                of experts in <b>multi-disciplinary</b> and
-                <b>multi-cultural environments</b>. I have worked as
-                <b>GIS Officer</b> at Naxa where I was involved in humanitarian
-                and disaster risk assessment sector. The journey as a
-                <b> Geomatics Engineer</b> has developed my passion to solve
-                critical environmental problems. <br /><br />
+                and a Bachelors in <b>Geomatics Engineering</b> from Kathmandu University. I am proficient in tools like ArcGIS Pro, 
+                ArcGIS Online, ArcGIS Experience Builder, ArcGIS Survey123, Tableau, and Python. The journey as a
+                <b> Geomatics Engineer</b> has developed my passion to address critical environmental management, public safety and emergency response. <br /><br />
                 Behind this profile, there is a genuine person. In my leisure
                 time, you might find me: hiking, travelling, reading about
                 technology, playing guitar and ukulele, involving in social
                 organizations or playing football.
               </p>
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul>
-                    <li>
-                      <i class="icofont-rounded-right"></i>
-                      <strong>Email:</strong
-                      ><a href="mailto: prashantthapaliya8989@gmail.com"
-                        >prashantthapaliya8989@gmail.com</a
-                      >
-                    </li>
-                    <li>
-                      <i class="icofont-rounded-right"></i>
-                      <strong>Website:</strong>
-                      <a href="https:/www.prashantthapaliya.com.np"
-                        >prashantthapaliya.com.np</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul>
-                    <li>
-                      <i class="icofont-rounded-right"></i>
-                      <strong>Completed:</strong> Masters
-                    </li>
-                    <li>
-                      <i class="icofont-rounded-right"></i>
-                      <strong>City:</strong> Colorado, US
-                    </li>
-                  </ul>
-                </div>
+            </div>
+            <div class="col-lg-4" data-aos="fade-left">
+              <img
+                src="assets/img/avatar1.jpg"
+                class="img-fluid"
+                width="80%"
+                alt=""
+                style="margin-bottom: 20px;"
+              />
+              <div class="contact-details" style="font-size: 15px;">
+                <ul style="list-style: none; padding-left: 0;">
+                  <li style="margin-bottom: 8px;">
+                    <i class="icofont-rounded-right"></i>
+                    <strong>Completed:</strong> Masters
+                  </li>
+                  <li style="margin-bottom: 8px;">
+                    <i class="icofont-rounded-right"></i>
+                    <strong>City:</strong> Colorado, US
+                  </li>
+                  <li style="margin-bottom: 8px;">
+                    <i class="icofont-rounded-right"></i>
+                    <strong>Website:</strong>
+                    <a href="https://www.prashantthapaliya.com.np">prashantthapaliya.com.np</a>
+                  </li>
+                  <li style="margin-bottom: 8px;">
+                    <i class="icofont-rounded-right"></i>
+                    <strong>Email:</strong>
+                    <a href="mailto:prashantthapaliya8989@gmail.com">prashantthapaliya8989@gmail.com</a>
+                  </li>
+                </ul>
               </div>
-              <p></p>
+
             </div>
           </div>
         </div>
       </section>
       <!-- End About Section -->
 
-      <!-- ======= Resume Section ======= -->
+      <!-- ======= Skills Section ======= -->
+      <section id="skills" class="skills section-bg">
+        <div class="container">
+          <div class="section-title">
+            <h2>Skills</h2>
+            <p>
+              I have serveral skills in the field of geospatial to create,
+              manage, analysis and disseminate the data. Also, I am very
+              interested to learn programming languages like Python, JavaScript.
+              I have a keen interest in graphic design as well.
+            </p>
+          </div>
+
+          <div class="row skills-content">
+            <div class="col-lg-6" data-aos="fade-up">
+              <div class="progress">
+                <span class="skill">ArcGIS <i class="val"></i></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">QGIS <i class="val"></i></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"> Geoserver <i class="val"> </i></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="95"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">
+                  Image Processing <i class="val"> </i
+                ></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="85"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="progress">
+                <span class="skill">Python <i class="val"></i></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="85"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"
+                  >Google Earth Engine <i class="val"></i
+                ></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"> R <i class="val"></i></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="70"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill"> Postgres <i class="val"> </i></span>
+                <div class="progress-bar-wrap">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    aria-valuenow="90"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="row skills-content">
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/python.png" width="40%" title="Python" />
+                <p>Python</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/ArcGIS-Pro.png" width="40%" title="ArcGIS Pro" />
+                <p>ArcGIS Pro</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/ArcGISOnline.png" width="40%" title="ArcGIS Online" />
+                <p>ArcGIS Online</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/ArcGIS_Experience_Builder.png" width="40%" title="ArcGIS Experience Builder" />
+                <p>ArcGIS Experience Builder</p>
+              </div>
+            
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/model_builderrr.png" width="45%" title="Model Builder" alt="" />
+                <p>Model Builder</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/arcgis.png" width="40%" title="ArcMap" alt="" />
+                <p>ArcMap</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/fieldmaps.png" width="100%" title="Field Maps" alt="" />
+                <p>Field Maps</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/qgis.png" width="40%" title="QGIS" alt="" />
+                <p>QGIS</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/gee.png" width="40%" title="Google Earth Engine" alt="" />
+                <p>Google Earth Engine</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/jupyter.png" width="40%" title="Jupyter Notebook" alt="" />
+                <p>Jupyter Notebook</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/js.png" width="60%" title="JavaScript" alt="" />
+                <p>JavaScript</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/geoserver.png" width="40%" title="Geoserver" alt="" />
+                <p>Geoserver</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/mapbox.png" width="40%" title="Mapbox" alt="" />
+                <p>Mapbox</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/openlayers.png" width="40%" title="Open Layers" alt="" />
+                <p>Open Layers</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/postman.png" width="60%" title="Postman" alt="" />
+                <p>Postman</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/postgres.png" width="40%" title="PostgreSQL" alt="" />
+                <p>PostgreSQL</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/bigquery.jpg" width="40%" title="BigQuery" alt="" />
+                <p>BigQuery</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/r.jpg" width="40%" title="R" alt="" />
+                <p>R</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/git.png" width="40%" title="GitHub" alt="" />
+                <p>GitHub</p>
+              </div>
+              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
+                <img src="/assets/img/skills/vs.png" width="40%" title="Virtual Studio Code" alt="" />
+                <p>Virtual Studio Code</p>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+      </section>
+      <!-- End Skills Section -->
+
+      <!-- ======= Portfolio Section ======= -->
+      <section id="project" class="portfolio section-bg">
+        <div id="portfolio-container">
+          <!-- Portfolio content will be loaded here -->
+        </div>
+      </section>
+      
+      <!-- End SPortfolio Section -->
+
+            <!-- ======= Resume Section ======= -->
       <section id="resume" class="resume">
         <div class="container">
           <div class="section-title">
@@ -420,248 +558,6 @@
         </div>
       </section>
       <!-- End Resume Section -->
-      <!-- ======= Skills Section ======= -->
-      <section id="skills" class="skills section-bg">
-        <div class="container">
-          <div class="section-title">
-            <h2>Skills</h2>
-            <p>
-              I have serveral skills in the field of geospatial to create,
-              manage, analysis and disseminate the data. Also, I am very
-              interested to learn programming languages like Python, JavaScript.
-              I have a keen interest in graphic design as well.
-            </p>
-          </div>
-
-          <div class="row skills-content">
-            <div class="col-lg-6" data-aos="fade-up">
-              <div class="progress">
-                <span class="skill">ArcGIS <i class="val"></i></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">QGIS <i class="val"></i></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="90"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill"> Geoserver <i class="val"> </i></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="95"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill">
-                  Image Processing <i class="val"> </i
-                ></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="85"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="progress">
-                <span class="skill">Python <i class="val"></i></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="85"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill"
-                  >Google Earth Engine <i class="val"></i
-                ></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="75"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill"> R <i class="val"></i></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="70"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill"> Postgres <i class="val"> </i></span>
-                <div class="progress-bar-wrap">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    aria-valuenow="90"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div class="row skills-content">
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/python.png" width="40%" title="Python" />
-                <p>Python</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/ArcGIS-Pro.png" width="40%" title="ArcGIS Pro" />
-                <p>ArcGIS Pro</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/ArcGISOnline.png" width="40%" title="ArcGIS Online" />
-                <p>ArcGIS Online</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/ArcGIS_Experience_Builder.png" width="40%" title="ArcGIS Experience Builder" />
-                <p>ArcGIS Experience Builder</p>
-              </div>
-            
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/arcgis.png" width="40%" title="ArcMap" alt="" />
-                <p>ArcMap</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/qgis.png" width="40%" title="QGIS" alt="" />
-                <p>QGIS</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/gee.png" width="40%" title="Google Earth Engine" alt="" />
-                <p>Google Earth Engine</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/jupyter.png" width="40%" title="Jupyter Notebook" alt="" />
-                <p>Jupyter Notebook</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/geoserver.png" width="40%" title="Geoserver" alt="" />
-                <p>Geoserver</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/openlayers.png" width="40%" title="Open Layers" alt="" />
-                <p>Open Layers</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/postgres.png" width="40%" title="PostgreSQL" alt="" />
-                <p>PostgreSQL</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/r.jpg" width="40%" title="R" alt="" />
-                <p>R</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/git.png" width="40%" title="GitHub" alt="" />
-                <p>GitHub</p>
-              </div>
-              <div class="portrait" data-aos="fade-up" data-aos-delay="100">
-                <img src="/assets/img/skills/vs.png" width="40%" title="Virtual Studio Code" alt="" />
-                <p>Virtual Studio Code</p>
-              </div>
-            </div>
-            
-            
-          </div>
-        </div>
-      </section>
-      <!-- End Skills Section -->
-
-      <!-- ======= Portfolio Section ======= -->
-      <section id="project" class="services">
-        <div class="container">
-          <div class="section-title">
-            <h2>Portfolio</h2>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-              <div class="icon">
-                <img src="assets/img/portfolio_img/environ/habitat.png" class="img-fluid" alt=""/>
-              </div>
-              <h4 class="title"><a href="/portfolio/environ.html">Identification of Environment Sensitive Areas</a></h4>
-              <p class="description"></p>
-            </div>
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-              <div class="icon">
-                <img src="assets/img/portfolio_img/ahp.PNG" class="img-fluid" alt=""/>
-              </div>
-              <h4 class="title"><a href="https://github.com/Geospasolutions/AHP_Calculator">AHP Calculator</a></h4>
-              <p class="description"></p>
-            </div>
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon">
-                <img src="assets/img/portfolio_img/deform.jpg" class="img-fluid" alt=""/>
-              </div>
-              <h4 class="title"><a href="/portfolio/deform.html">Deformation Model Caused by Earthquake</a></h4>
-              <p class="description"></p>
-            </div>
-          </div>
-            <div class="row">
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon">
-                <img src="assets/img/portfolio_img/namkha.jpg" class="img-fluid" alt=""/>
-              </div>
-              <h4 class="title"><a href="https://naxa.com.np/portfolio/keyhighlights/73">Local Trails And Infrastructure Mapping</a></h4>
-              <p class="description"></p>
-            </div>
-        
-          
-            <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon">
-                <img src="assets/img/portfolio_img/suitability_analysis/suitability_map.jpg" class="img-fluid" alt=""/>
-              </div>
-              <h4 class="title"><a href="/portfolio/suitability.html">Suitability Analysis</a></h4>
-              <p class="description"></p>
-            </div>
-          </div>
-          </div>
-      </section>
-      
-      <!-- End SPortfolio Section -->
 
       <!-- ======= Contact Section ======= -->
       <section id="contact" class="contact">
@@ -782,5 +678,70 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- Custom JS Files -->
+    <script src="assets/js/minimize.js"></script>
+    <script src="assets/js/header.js"></script>
+    
+    <!-- Portfolio Section Loader -->
+    <script>
+      // Function to load portfolio section
+      async function loadPortfolioSection() {
+        try {
+          const response = await fetch('portfolio-section.html');
+          const html = await response.text();
+          document.getElementById('portfolio-container').innerHTML = html;
+          
+          // Re-initialize AOS animations for the loaded content
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh();
+          }
+          
+          // Check if we need to scroll to portfolio section after loading
+          if (window.location.hash === '#project') {
+            setTimeout(() => {
+              const portfolioSection = document.getElementById('project');
+              if (portfolioSection) {
+                portfolioSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 100);
+          }
+        } catch (error) {
+          console.error('Error loading portfolio section:', error);
+          // Fallback: show a simple message
+          document.getElementById('portfolio-container').innerHTML = '<p>Portfolio section could not be loaded.</p>';
+        }
+      }
+      
+      // Handle navigation clicks to portfolio
+      function handlePortfolioNavigation(event) {
+        event.preventDefault();
+        
+        // Check if portfolio is loaded
+        const portfolioSection = document.getElementById('project');
+        if (portfolioSection) {
+          portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // If not loaded yet, wait a bit and try again
+          setTimeout(() => {
+            const portfolioSection = document.getElementById('project');
+            if (portfolioSection) {
+              portfolioSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 200);
+        }
+        
+        // Update URL hash
+        window.history.pushState(null, null, '#project');
+      }
+      
+      // Load header and portfolio when page is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        // Load header first, then portfolio
+        loadHeaderSection().then(() => {
+          loadPortfolioSection();
+        });
+      });
+    </script>
   </body>
 </html>

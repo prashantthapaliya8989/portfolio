@@ -1153,3 +1153,57 @@ section {
     justify-content: center;
   }
 }
+
+   
+/* Mobile responsive styles for About section */
+@media (max-width: 768px) {
+  #about {
+    min-height: auto !important;
+    padding: 40px 0 !important;
+    background-attachment: scroll !important;
+  }
+  
+  #about-container {
+    padding: 20px !important;
+    margin: 10px !important;
+    max-width: 98% !important;
+  }
+  
+  #about .col-lg-8 {
+    margin-bottom: 30px;
+  }
+  
+  #about .col-lg-4 img {
+    width: 60% !important;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+  
+  #about .contact-details {
+    text-align: center;
+  }
+  
+  #minimize-btn {
+    top: 10px !important;
+    right: 10px !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #about-container {
+    padding: 15px !important;
+    margin: 5px !important;
+  }
+  
+  #about h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  #about p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+}

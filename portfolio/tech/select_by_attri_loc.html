@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Prashant Thapaliya</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../../assets/img/avatar.png" rel="icon" />
+    <link href="../../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link
+      href="../../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/venobox/venobox.css" rel="stylesheet" />
+    <link
+      href="../../assets/vendor/owl.carousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: iPortfolio - v1.4.0
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+  <style>
+    .portrait {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+  <body>
+    <div id="header-container"></div>
+
+    <main id="main">
+      <!-- ======= Title ======= -->
+      <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h1>
+              Select by Attributes and Select by Location Toolbox
+            </h1>
+          </div>
+          <h2> Python, Arcpy </h2>
+
+        </div>
+      </section>
+      <!-- End Title -->
+
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        <div class="container">
+          <div class="portfolio-description">
+            <h2 style="color: rgb(0, 0, 0)"><strong><u>Select by Attributes</u></strong></h2>
+            <p>
+              Built a script tool that lets users select features from a layer by specifying a field, 
+              operator, and value—without writing SQL manually. The tool uses parameter dependencies 
+              to show only valid fields and values based on the selected layer. It improves accessibility 
+              for non-GIS users and reduces errors in expression building.
+            </p>
+
+            <br><h2>&lt;/&gt; Snippet</h2>
+            <pre><code class="language-python">
+              def ScriptTool(param0, param1, param2, param3):
+
+                  ap = arcpy.mp.ArcGISProject("CURRENT")
+                  m = ap.listMaps()[0]
+                  my_list = []
+                  for layer in m.listLayers():
+                      if layer.isFeatureLayer and not layer.isBroken:
+                          if layer.name == param0:
+                              featureClass = layer.dataSource
+                              fields = [param1]
+                              with arcpy.da.SearchCursor(featureClass, fields) as cursor:
+                                  for row in cursor:
+                                      my_list.append(row[0])
+                  if param3 in my_list:
+                      val = '{}'.format(param3)
+                  else:
+                      val = None
+                  exp = "{0} {1} '{2}'".format(param1, param2, val)
+                  arcpy.AddMessage(exp)
+            </code></pre>
+
+            <div class="text-center">
+              <img src="../../assets/img/tech/select_by_attri.png" class="img-fluid"/>
+              <p style="font-size: 15px"> <i>Interface</i></p> <br>
+            </div>
+
+            <h2 style="color: rgb(0, 0, 0)"><strong><u>Select by Location</u></strong></h2>
+            <p>
+              Developed a spatial query tool that selects features based on their relationship to 
+              another layer (e.g., intersects, within, contains). Includes optional distance-based 
+              selections. The interface adapts to user input, and the tool executes using SelectLayerByLocation, 
+              offering a simpler way to perform spatial selections.
+            </p>
+
+            <br><h2>&lt;/&gt; Snippet</h2>
+            <pre><code class="language-python">
+              def updateParameters(self):
+                # Modify parameter values and properties.
+                # This gets called each time a parameter is modified, before 
+                # standard validation.
+                aprx = arcpy.mp.ArcGISProject("CURRENT")
+                v = aprx.activeView # Get active view
+                m = v.map # Get active map
+                layerFilter = self.params[0].filter 
+
+                # Initialize lists
+                layerList = []
+                layerFilter.list = layerList
+                
+                # Populate layers
+                for layer in m.listLayers():
+                    if layer.isFeatureLayer and not layer.isBroken:
+                        layerList.append(layer.name)
+                layerFilter.list = layerList
+            </code></pre>
+
+            <div class="text-center">
+              <img src="../../assets/img/tech/select_by_loc.png" class="img-fluid"/>
+              <p style="font-size: 15px"> <i>Interface</i></p> <br>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+      <!-- End Portfolio Details Section -->
+    </main>
+    <!-- End #main -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+     <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="../../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../../assets/vendor/counterup/counterup.min.js"></script>
+    <script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../../assets/vendor/venobox/venobox.min.js"></script>
+    <script src="../../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="../../assets/vendor/typed.js/typed.min.js"></script>
+    <script src="../../assets/vendor/aos/aos.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/header.js"></script>
+    <script>   
+      // Load header and portfolio when page is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        // Load header first, then portfolio
+        loadHeaderSection().then(() => {
+          loadPortfolioSection();
+        });
+      });
+    </script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  </body>
+</html>
